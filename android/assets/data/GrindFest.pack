@@ -1,0 +1,243 @@
+
+GrindFest.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Background A
+  rotate: false
+  xy: 1, 243
+  size: 800, 240
+  orig: 800, 240
+  offset: 0, 0
+  index: -1
+Background B
+  rotate: false
+  xy: 1, 1
+  size: 800, 240
+  orig: 800, 240
+  offset: 0, 0
+  index: -1
+foreground
+  rotate: false
+  xy: 803, 243
+  size: 800, 240
+  orig: 800, 240
+  offset: 0, 0
+  index: -1
+middleground
+  rotate: false
+  xy: 803, 1
+  size: 800, 240
+  orig: 800, 240
+  offset: 0, 0
+  index: -1
+clouds
+  rotate: false
+  xy: 1605, 243
+  size: 400, 240
+  orig: 400, 240
+  offset: 0, 0
+  index: -1
+NewLogo
+  rotate: false
+  xy: 1605, 61
+  size: 120, 180
+  orig: 120, 180
+  offset: 0, 0
+  index: -1
+GoblinRun0000
+  rotate: false
+  xy: 2007, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0001
+  rotate: false
+  xy: 1727, 161
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0002
+  rotate: false
+  xy: 2007, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0003
+  rotate: false
+  xy: 2089, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0004
+  rotate: false
+  xy: 1727, 79
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0005
+  rotate: false
+  xy: 1809, 161
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0006
+  rotate: false
+  xy: 2089, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+GoblinRun0007
+  rotate: false
+  xy: 2171, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterIdle0000
+  rotate: false
+  xy: 1809, 79
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterIdle0001
+  rotate: false
+  xy: 1891, 161
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterIdle0002
+  rotate: false
+  xy: 2171, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterIdle0003
+  rotate: false
+  xy: 2253, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0000
+  rotate: false
+  xy: 1891, 79
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0001
+  rotate: false
+  xy: 2253, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0002
+  rotate: false
+  xy: 2335, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0003
+  rotate: false
+  xy: 2335, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0004
+  rotate: false
+  xy: 2417, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0005
+  rotate: false
+  xy: 2417, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0006
+  rotate: false
+  xy: 2499, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun+Attack0007
+  rotate: false
+  xy: 2499, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0000
+  rotate: false
+  xy: 2581, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0001
+  rotate: false
+  xy: 2581, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0002
+  rotate: false
+  xy: 2663, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0003
+  rotate: false
+  xy: 2663, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0004
+  rotate: false
+  xy: 2745, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0005
+  rotate: false
+  xy: 2745, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0006
+  rotate: false
+  xy: 2827, 403
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+MainCharacterRun0007
+  rotate: false
+  xy: 2827, 321
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
