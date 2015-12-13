@@ -35,6 +35,7 @@ public class InputHandler implements InputProcessor {
 
 	@Override
 	public boolean keyDown(int keycode) {
+		// space button on pc desktop
 		if(keycode == Input.Keys.SPACE){
 			if (myWorld.isMenu()) {
 				myWorld.ready();
@@ -52,7 +53,7 @@ public class InputHandler implements InputProcessor {
 					myWorld.restart();
 
 			}
-		
+
 		}
 		return true;
 	}
