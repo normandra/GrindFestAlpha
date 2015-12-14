@@ -2,6 +2,7 @@ package com.norman.game.gfhelpers;
 
 import com.badlogic.gdx.Gdx;
 
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -15,8 +16,9 @@ public class AssetLoader {
 
     private static TextureAtlas mainAtlas;
 
-    public static TextureRegion splash, foreground, middleground, backgrounda,backgroundb, clouds;
+    public static TextureRegion splash, foreground, middleground, backgrounda,backgroundb, clouds, playbutton,playbuttonpressed,sound,mute;
 
+    public static Preferences prefs;
     public static Animation heroRun;
     public static Animation heroAttack;
     public static Animation heroIdle;
@@ -27,7 +29,23 @@ public class AssetLoader {
     public static BitmapFont font, shadow;
 
     public static void load(){
+
+        //preferences(saving)
+        prefs = Gdx.app.getPreferences("GFgame");
+
+        if(!prefs.contains("highScore")){
+            prefs.putInteger("highScore",0);
+        }
+
         mainAtlas = new TextureAtlas(Gdx.files.internal("data/GrindFest.pack"));
+
+        //Buttons-------------------------------------------------------
+        playbutton = new TextureRegion(mainAtlas.findRegion("playbutton"));
+        playbuttonpressed = new TextureRegion(mainAtlas.findRegion("playbutton pressed"));
+
+        sound = new TextureRegion(mainAtlas.findRegion("mutebutton on"));
+        mute = new TextureRegion(mainAtlas.findRegion("mutebutton off"));
+
 
         //Hero Animation------------------------------------------------
         heroRun = new Animation(1/15f,
@@ -89,6 +107,16 @@ public class AssetLoader {
         hit = Gdx.audio.newSound(Gdx.files.internal("data/hit.wav"));
         slash = Gdx.audio.newSound(Gdx.files.internal("data/slash.wav"));
 
+    }
+
+
+    public static void setHighScore(int val) {
+        prefs.putInteger("highScore", val);
+        prefs.flush();
+    }
+
+    public static int getHighScore() {
+        return prefs.getInteger("highScore");
     }
 
     public static void dispose(){

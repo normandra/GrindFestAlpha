@@ -34,7 +34,7 @@ public class Background {
 
     public void addSpeed() {
         if(velX > -maxspeed)
-        velX -= 0.07f;
+        velX -= maxspeed/100;
 
         //System.out.println(velX);
     }

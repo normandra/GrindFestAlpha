@@ -1,10 +1,12 @@
 package com.norman.game.gameworld;
 
 import com.badlogic.gdx.math.MathUtils;
+import com.norman.game.GFgame;
 import com.norman.game.gameobjects.Background;
 import com.norman.game.gameobjects.Hero;
 import com.norman.game.gameobjects.Ogre;
 import com.norman.game.gfhelpers.AssetLoader;
+import com.norman.game.ui.SimpleButton;
 
 import java.util.ArrayList;
 
@@ -16,16 +18,17 @@ public class GameWorld {
 
     private ArrayList<Ogre> enemies;
 
+
     private Background clouds, backgrounda, backgroundb, middleground, foreground;
 
     private GameRenderer renderer;
     private GameState currentState;
     private boolean stop;
 
-    private int enemyDeaths;
+    private int score;
 
     public enum GameState {
-        MENU, READY, RUNNING, GAMEOVER
+        MENU, READY, RUNNING, GAMEOVER, HIGHSCORE
     }
 
     public Background getClouds() {
@@ -48,14 +51,16 @@ public class GameWorld {
         return foreground;
     }
 
+
     public GameWorld() {
         currentState = GameState.MENU;
         hero = new Hero(20, 21);
-        clouds = new Background(AssetLoader.clouds, -0.1f,400,2);
-        backgrounda = new Background(AssetLoader.backgrounda, -1f,800,4);
-        backgroundb = new Background(AssetLoader.backgroundb, -1f,800,4);
-        middleground = new Background(AssetLoader.middleground, -1f,800,4);
-        foreground = new Background(AssetLoader.foreground, -1.2f,800,4.8f);
+        clouds = new Background(AssetLoader.clouds, -0.1f,400,1);
+        backgroundb = new Background(AssetLoader.backgroundb, -0.3f,800,3);
+        backgrounda = new Background(AssetLoader.backgrounda, -0.6f,800,6);
+        middleground = new Background(AssetLoader.middleground, -1f,800,10);
+        foreground = new Background(AssetLoader.foreground, -1.5f,800,15);
+
 
 
 
@@ -92,7 +97,7 @@ public class GameWorld {
             if (enemies.get(i).collides(hero) && stop == false) {
                 //if (middleground.getVelX() == 4)
                 if (hero.isAttacking()) {
-                    enemyDeaths++;
+                    score++;
                     clouds.addSpeed();
                     backgroundb.addSpeed();
                     backgrounda.addSpeed();
@@ -105,12 +110,17 @@ public class GameWorld {
                     stop = true;
                     renderer.prepareTransition(255, 255, 255, 1f);
                     currentState = GameState.GAMEOVER;
+
+                    if(score > AssetLoader.getHighScore()){
+                        AssetLoader.setHighScore(score);
+                        currentState = GameState.HIGHSCORE;
+                    }
                 }
             }
 
             /*if(hero.isAttacking()){
                 enemies.get(i).die();
-                enemyDeaths++;
+                score++;
                 AssetLoader.hit.play();
                 clouds.addSpeed();
                 backgroundb.addSpeed();
@@ -185,6 +195,8 @@ public class GameWorld {
         return currentState == GameState.MENU;
     }
 
+    public boolean isHighscore() { return currentState == GameState.HIGHSCORE; }
+
     public void start() {
 
         currentState = GameState.RUNNING;
@@ -211,7 +223,7 @@ public class GameWorld {
         stop = false;
         hero.onRestart(20, 21);
         enemies.clear();
-        enemyDeaths = 0;
+        score = 0;
 
         //BACKGROUND SHITS
         clouds.onRestart();
@@ -235,8 +247,8 @@ public class GameWorld {
         return stop;
     }
 
-    public int getEnemyDeaths() {
-        return enemyDeaths;
+    public int getScore() {
+        return score;
     }
 
 

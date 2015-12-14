@@ -17,16 +17,24 @@ public class InputHandler implements InputProcessor {
 	private Hero hero;
 	private GameWorld myWorld;
 
+	private List<SimpleButton> menuButtons;
+	private SimpleButton playButton;
 
     private float scaleFactorX;
     private float scaleFactorY;
-	
-    // Ask for a reference to the char class when InputHandler is created.
+
+
+	// Ask for a reference to the char class when InputHandler is created.
     public InputHandler(GameWorld myWorld, float scaleFactorX,
                         float scaleFactorY) {
 
         this.myWorld = myWorld;
         hero = myWorld.getHero();
+
+		//buttons
+		menuButtons = new ArrayList<SimpleButton>();
+		playButton = new SimpleButton(GFgame.WIDTH/4-25,GFgame.HEIGHT/4-40,50,30, AssetLoader.playbutton, AssetLoader.playbuttonpressed);
+		menuButtons.add(playButton);
 
         this.scaleFactorX = scaleFactorX;
         this.scaleFactorY = scaleFactorY;
@@ -45,12 +53,6 @@ public class InputHandler implements InputProcessor {
 			else if (myWorld.isRunning()) {
 				hero.attack();
 
-
-			}
-			if (myWorld.isGameOver()) {
-				// Reset all variables, go to GameState.READ
-
-					myWorld.restart();
 
 			}
 
@@ -79,7 +81,7 @@ public class InputHandler implements InputProcessor {
 		//Gdx.app.log("location ",screenX + " " + screenY);
 
         if (myWorld.isMenu()) {
-            myWorld.ready();
+			playButton.isTouchDown(screenX,screenY);
         } else if (myWorld.isReady()) {
             myWorld.start();
         }
@@ -88,18 +90,33 @@ public class InputHandler implements InputProcessor {
 
 
         }
-        if (myWorld.isGameOver()) {
+        if (myWorld.isGameOver() || myWorld.isHighscore()) {
             // Reset all variables, go to GameState.READ
-            if(screenX > 95 && screenX <315 && screenY > 135 && screenY < 160)
-            myWorld.restart();
-
+			playButton.isTouchDown(screenX, screenY);
         }
 		return true;// true to enable input handler
 	}
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        return false;
+		screenX = scaleX(screenX);
+		screenY = scaleY(screenY);
+
+		if(myWorld.isMenu()){
+			if(playButton.isTouchUp(screenX, screenY)){
+				myWorld.ready();
+				return true;
+			}
+		}
+
+		if(myWorld.isGameOver()||myWorld.isHighscore()){
+			if(playButton.isTouchUp(screenX,screenY)){
+				myWorld.restart();
+				return true;
+			}
+		}
+
+        return true;
 	}
 
 	@Override
@@ -125,8 +142,12 @@ public class InputHandler implements InputProcessor {
     }
 
     private int scaleY(int screenY) {
-        return (int) (screenY * scaleFactorY);
+        return (int) (240 - (screenY * scaleFactorY));
     }
+
+	public List<SimpleButton> getMenuButtons() {
+		return menuButtons;
+	}
 
 
 }

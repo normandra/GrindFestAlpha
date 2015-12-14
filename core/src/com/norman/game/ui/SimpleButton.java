@@ -25,6 +25,7 @@ public class SimpleButton {
         this.buttonDown = buttonDown;
 
         bounds = new Rectangle(x, y, width, height);
+       // System.out.println(x + " " +y +" "+width +" " +height);
 
     }
 
@@ -42,6 +43,7 @@ public class SimpleButton {
 
     public boolean isTouchDown(int screenX, int screenY) {
 
+
         if (bounds.contains(screenX, screenY)) {
             isPressed = true;
             return true;
@@ -51,7 +53,7 @@ public class SimpleButton {
     }
 
     public boolean isTouchUp(int screenX, int screenY) {
-        
+
         // It only counts as a touchUp if the button is in a pressed state.
         if (bounds.contains(screenX, screenY) && isPressed) {
             isPressed = false;

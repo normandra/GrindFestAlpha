@@ -5,239 +5,267 @@ filter: Nearest,Nearest
 repeat: none
 Background A
   rotate: false
-  xy: 1, 243
+  xy: 1, 750
   size: 800, 240
   orig: 800, 240
   offset: 0, 0
   index: -1
 Background B
   rotate: false
-  xy: 1, 1
+  xy: 1, 508
   size: 800, 240
   orig: 800, 240
   offset: 0, 0
   index: -1
 foreground
   rotate: false
-  xy: 803, 243
+  xy: 803, 750
   size: 800, 240
   orig: 800, 240
   offset: 0, 0
   index: -1
 middleground
   rotate: false
-  xy: 803, 1
+  xy: 1, 266
   size: 800, 240
   orig: 800, 240
   offset: 0, 0
   index: -1
 clouds
   rotate: false
-  xy: 1605, 243
+  xy: 803, 508
   size: 400, 240
   orig: 400, 240
   offset: 0, 0
   index: -1
 NewLogo
   rotate: false
-  xy: 1605, 61
+  xy: 1605, 810
   size: 120, 180
   orig: 120, 180
   offset: 0, 0
   index: -1
 GoblinRun0000
   rotate: false
-  xy: 2007, 403
+  xy: 1, 184
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0001
   rotate: false
-  xy: 1727, 161
+  xy: 803, 426
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0002
   rotate: false
-  xy: 2007, 321
+  xy: 1205, 668
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0003
   rotate: false
-  xy: 2089, 403
+  xy: 1727, 910
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0004
   rotate: false
-  xy: 1727, 79
+  xy: 1, 102
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0005
   rotate: false
-  xy: 1809, 161
+  xy: 83, 184
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0006
   rotate: false
-  xy: 2089, 321
+  xy: 803, 344
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 GoblinRun0007
   rotate: false
-  xy: 2171, 403
+  xy: 885, 426
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterIdle0000
   rotate: false
-  xy: 1809, 79
+  xy: 1205, 586
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterIdle0001
   rotate: false
-  xy: 1891, 161
+  xy: 1287, 668
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterIdle0002
   rotate: false
-  xy: 2171, 321
+  xy: 1727, 828
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterIdle0003
   rotate: false
-  xy: 2253, 403
+  xy: 1809, 910
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0000
   rotate: false
-  xy: 1891, 79
+  xy: 1, 20
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0001
   rotate: false
-  xy: 2253, 321
+  xy: 83, 102
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0002
   rotate: false
-  xy: 2335, 403
+  xy: 165, 184
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0003
   rotate: false
-  xy: 2335, 321
+  xy: 885, 344
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0004
   rotate: false
-  xy: 2417, 403
+  xy: 967, 426
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0005
   rotate: false
-  xy: 2417, 321
+  xy: 1287, 586
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0006
   rotate: false
-  xy: 2499, 403
+  xy: 1369, 668
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun+Attack0007
   rotate: false
-  xy: 2499, 321
+  xy: 1809, 828
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0000
   rotate: false
-  xy: 2581, 403
+  xy: 1891, 910
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0001
   rotate: false
-  xy: 2581, 321
+  xy: 83, 20
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0002
   rotate: false
-  xy: 2663, 403
+  xy: 165, 102
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0003
   rotate: false
-  xy: 2663, 321
+  xy: 247, 184
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0004
   rotate: false
-  xy: 2745, 403
+  xy: 967, 344
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0005
   rotate: false
-  xy: 2745, 321
+  xy: 1049, 426
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0006
   rotate: false
-  xy: 2827, 403
+  xy: 1369, 586
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 MainCharacterRun0007
   rotate: false
-  xy: 2827, 321
+  xy: 1451, 668
   size: 80, 80
   orig: 80, 80
+  offset: 0, 0
+  index: -1
+playbutton pressed
+  rotate: false
+  xy: 1605, 767
+  size: 58, 41
+  orig: 58, 41
+  offset: 0, 0
+  index: -1
+playbutton
+  rotate: false
+  xy: 803, 301
+  size: 58, 41
+  orig: 58, 41
+  offset: 0, 0
+  index: -1
+mutebutton on
+  rotate: false
+  xy: 1205, 559
+  size: 24, 25
+  orig: 24, 25
+  offset: 0, 0
+  index: -1
+mutebutton off
+  rotate: false
+  xy: 1, 1
+  size: 11, 17
+  orig: 11, 17
   offset: 0, 0
   index: -1

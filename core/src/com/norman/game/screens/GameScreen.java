@@ -19,19 +19,21 @@ public class GameScreen implements Screen {
     private GameWorld world;
     private GameRenderer renderer;
     private OrthographicCamera cam;
-    private Viewport viewport;
+
 
     public GameScreen() {
         cam = new OrthographicCamera();
-        cam.setToOrtho(false, GFgame.WIDTH/2,GFgame.HEIGHT/2);
+        cam.setToOrtho(false, GFgame.WIDTH / 2, GFgame.HEIGHT / 2);
 
         //Gdx.app.log("width", " "+Gdx.graphics.getWidth());
 
         world = new GameWorld();
-        renderer = new GameRenderer(world,cam,viewport);
-        world.setRenderer(renderer);
 
         Gdx.input.setInputProcessor(new InputHandler(world, cam.viewportWidth / Gdx.graphics.getWidth(), cam.viewportHeight / Gdx.graphics.getHeight()));
+        renderer = new GameRenderer(world,cam);
+        world.setRenderer(renderer);
+
+
     }
 
     @Override

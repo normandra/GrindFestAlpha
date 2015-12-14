@@ -13,6 +13,7 @@ import com.norman.game.gameobjects.Background;
 import com.norman.game.gameobjects.Hero;
 import com.norman.game.gameobjects.Ogre;
 import com.norman.game.gfhelpers.AssetLoader;
+import com.norman.game.gfhelpers.InputHandler;
 import com.norman.game.ui.SimpleButton;
 
 import java.util.ArrayList;
@@ -47,8 +48,11 @@ public class GameRenderer {
     private List<SimpleButton> menuButtons;
     private Color transitionColor;
 
-    public GameRenderer(GameWorld world,OrthographicCamera cam, Viewport viewport){
+    public GameRenderer(GameWorld world,OrthographicCamera cam){
         this.cam = cam;
+        this.menuButtons = ((InputHandler) Gdx.input.getInputProcessor())
+                .getMenuButtons();
+
 
         myWorld = world;
 
@@ -117,43 +121,38 @@ public class GameRenderer {
     }
 
     private void drawMenuUI() {
-        // Draw shadow first
-        AssetLoader.shadow.draw(batcher, "Tap to start", cam.viewportWidth/2, 160);
-        AssetLoader.shadow.draw(batcher, "Game by Norman and Niko", cam.viewportWidth/2-50, 80);
 
-        // Draw text
-        AssetLoader.font.draw(batcher, "Tap to start", cam.viewportWidth/2, 160);
-        AssetLoader.font.draw(batcher, "Game by Norman and Niko", cam.viewportWidth/2-50, 80);
 
-        //for (SimpleButton button : menuButtons) {
-        //    button.draw(batcher);
-        //}
+        for (SimpleButton button : menuButtons) {
+            button.draw(batcher);
+        }
 
     }
 
     private void drawEndUI() {
+        for (SimpleButton button : menuButtons) {
+            button.draw(batcher);
+        }
 
+        if(myWorld.isGameOver()){
 
+            AssetLoader.font.draw(batcher, "Final Score: " + myWorld.getScore(), cam.viewportWidth/2- 110,  170);
 
-        // Draw shadow first
-        AssetLoader.shadow.draw(batcher, "Final Score: " + myWorld.getEnemyDeaths(), cam.viewportWidth/2, 170);
-        // Draw text
-        AssetLoader.font.draw(batcher, "Final Score: " + myWorld.getEnemyDeaths(), cam.viewportWidth/2,  170);
+            AssetLoader.font.draw(batcher, "Best: " + AssetLoader.getHighScore(), cam.viewportWidth/2+50,  170);
 
-    //    AssetLoader.shadow.draw(batcher, "Kills " + myWorld.getEnemyDeaths(), cam.viewportWidth/2, 600);
-    //    AssetLoader.shadow.draw(batcher, "Kills " + myWorld.getEnemyDeaths(), cam.viewportWidth/2, 600);
+        }else{
+            // Draw shadow first
+            AssetLoader.shadow.draw(batcher, "NEW HIGHSCORE! " + AssetLoader.getHighScore(), cam.viewportWidth/2, 170);
+            // Draw text
+            AssetLoader.font.draw(batcher, "NEW HIGHSCORE! " + AssetLoader.getHighScore(), cam.viewportWidth/2,  170);
 
-    //    shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-    //    shapeRenderer.setColor(Color.BLUE);
-    //    shapeRenderer.rect(cam.viewportWidth / 2 - 30, cam.viewportHeight - 150, 60, 20);
-    //    shapeRenderer.end();
+        }
 
-        AssetLoader.font.draw(batcher, "Tap here to play again!", cam.viewportWidth / 2 - 100,cam.viewportHeight -140);
     }
 
     private void drawScore(){
         // Convert integer into String
-        String life = myWorld.getEnemyDeaths() + "";
+        String life = myWorld.getScore() + "";
 
         /*// Draw shadow first
         AssetLoader.shadow.draw(batcher, "" + myWorld.getHp(), (5)
@@ -163,10 +162,10 @@ public class GameRenderer {
                 - (3 * life.length() - 1), 5);*/
 
         // Draw shadow first
-        AssetLoader.shadow.draw(batcher, " " + myWorld.getEnemyDeaths(), (cam.viewportWidth/2)
+        AssetLoader.shadow.draw(batcher, " " + myWorld.getScore(), (cam.viewportWidth/2)
                 - (3 * life.length()), 200);
         // Draw text
-        AssetLoader.font.draw(batcher, " " + myWorld.getEnemyDeaths(), (cam.viewportWidth/2)
+        AssetLoader.font.draw(batcher, " " + myWorld.getScore(), (cam.viewportWidth/2)
                 - (3 * life.length() - 1), 200);
     }
 
@@ -227,10 +226,10 @@ public class GameRenderer {
         } else if (myWorld.isMenu()) {
             drawHero();
             drawMenuUI();
-        } else if (myWorld.isGameOver()) {
+
+        } else if (myWorld.isGameOver() || myWorld.isHighscore()) {
             drawHero();
             drawEnemy();
-            //drawScore();
             drawEndUI();
         }
 
